@@ -80,6 +80,7 @@ class FlutterBoost {
             pageInfo.containsKey('params') &&
             pageInfo.containsKey('uniqueId')) {
           ContainerCoordinator.singleton.nativeContainerDidShow(
+              pageInfo["name"], pageInfo["params"], pageInfo["uniqueId"]);
             pageInfo['name'] as String,
             (pageInfo['params'] as Map<dynamic, dynamic>)
                 ?.cast<String, dynamic>(),
