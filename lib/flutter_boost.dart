@@ -68,6 +68,7 @@ class FlutterBoost {
 
   static void onPageStart() {
     WidgetsBinding.instance.addPostFrameCallback((Duration _) {
+        
       singleton.channel
           .invokeMethod<Map<dynamic, dynamic>>('pageOnStart')
           .then((Map<dynamic, dynamic> _pageInfo) {
@@ -81,10 +82,7 @@ class FlutterBoost {
             pageInfo.containsKey('uniqueId')) {
           ContainerCoordinator.singleton.nativeContainerDidShow(
               pageInfo["name"], pageInfo["params"], pageInfo["uniqueId"]);
-            pageInfo['name'] as String,
-            (pageInfo['params'] as Map<dynamic, dynamic>)
-                ?.cast<String, dynamic>(),
-            pageInfo['uniqueId'] as String,
+            
           );
         }
       });
