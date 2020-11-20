@@ -83,7 +83,7 @@ class FlutterBoost {
           ContainerCoordinator.singleton.nativeContainerDidShow(
               pageInfo["name"], pageInfo["params"], pageInfo["uniqueId"]);
             
-          );
+   
         }
       });
     });
